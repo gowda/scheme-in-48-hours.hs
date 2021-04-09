@@ -3,11 +3,12 @@ module Scheme
   )
 where
 
+import Control.Monad.Error
 import Scheme.Parser (parseExpr)
-import Scheme.Types (LispVal (..))
+import Scheme.Types (LispError (..), LispVal (..), ThrowsError (..))
 import Text.ParserCombinators.Parsec (parse)
 
-readExpr :: String -> LispVal
+readExpr :: String -> ThrowsError LispVal
 readExpr input = case parse parseExpr "lisp" input of
-  Left err -> String $ "No match: " ++ show err
-  Right val -> val
+  Left err -> throwError $ Parser err
+  Right val -> return val
