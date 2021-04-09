@@ -1,9 +1,9 @@
-module ParserSpec where
+module SchemeSpec.ParserSpec where
 
-import Parser
+import Scheme.Parser
+import Scheme.Types (LispVal (..))
 import Test.Hspec (describe, it, shouldBe)
 import Text.ParserCombinators.Parsec (parse)
-import Types (LispVal (..))
 
 spec = do
   describe "parseNumber" $ do

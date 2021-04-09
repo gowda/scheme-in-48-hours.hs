@@ -1,9 +1,9 @@
-module Evaluator
+module Scheme.Evaluator
   ( eval,
   )
 where
 
-import Types (LispVal (..))
+import Scheme.Types (LispVal (..))
 
 unpackNum :: LispVal -> Integer
 unpackNum (Number n) = n

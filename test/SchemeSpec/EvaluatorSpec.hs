@@ -1,9 +1,9 @@
-module EvaluatorSpec where
+module SchemeSpec.EvaluatorSpec where
 
-import Evaluator (eval)
-import Lib (readExpr)
+import Scheme (readExpr)
+import Scheme.Evaluator (eval)
+import Scheme.Types (LispVal (..))
 import Test.Hspec (describe, it, shouldBe)
-import Types (LispVal (..))
 
 spec = do
   describe "eval" $ do

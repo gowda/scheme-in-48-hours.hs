@@ -1,8 +1,8 @@
-module LibSpec where
+module SchemeSpec where
 
-import Lib
+import Scheme (readExpr)
+import Scheme.Types (LispVal (..))
 import Test.Hspec (describe, it, shouldBe)
-import Types (LispVal (..))
 
 spec = do
   describe "readExpr" $ do

@@ -1,4 +1,4 @@
-module Parser
+module Scheme.Parser
   ( parseBool,
     parseAtom,
     parseChar,
@@ -13,8 +13,8 @@ where
 import Control.Monad (liftM)
 import Data.List (intercalate)
 import Numeric (readHex, readOct)
+import Scheme.Types (LispVal (..))
 import Text.ParserCombinators.Parsec hiding (spaces)
-import Types (LispVal (..))
 
 symbol :: Parser Char
 symbol = oneOf "!$%&|*+-/:<=?>@^_~"

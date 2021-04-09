@@ -1,7 +1,7 @@
 module Main where
 
-import Evaluator (eval)
-import Lib
+import Scheme (readExpr)
+import Scheme.Evaluator (eval)
 import System.Environment
 
 main :: IO ()

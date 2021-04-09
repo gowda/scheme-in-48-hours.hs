@@ -1,12 +1,12 @@
-import qualified EvaluatorSpec
-import qualified LibSpec
-import qualified ParserSpec
+import qualified SchemeSpec
+import qualified SchemeSpec.EvaluatorSpec
+import qualified SchemeSpec.ParserSpec
+import qualified SchemeSpec.TypesSpec
 import Test.Hspec
-import qualified TypesSpec
 
 main :: IO ()
 main = hspec $ do
-  LibSpec.spec
-  EvaluatorSpec.spec
-  ParserSpec.spec
-  TypesSpec.spec
+  SchemeSpec.spec
+  SchemeSpec.EvaluatorSpec.spec
+  SchemeSpec.ParserSpec.spec
+  SchemeSpec.TypesSpec.spec

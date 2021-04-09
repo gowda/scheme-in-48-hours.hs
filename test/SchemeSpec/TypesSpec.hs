@@ -1,7 +1,7 @@
-module TypesSpec where
+module SchemeSpec.TypesSpec where
 
+import Scheme.Types (LispVal (..))
 import Test.Hspec (describe, it, shouldBe)
-import Types (LispVal (..))
 
 spec = do
   describe "show" $ do

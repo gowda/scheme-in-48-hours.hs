@@ -1,4 +1,4 @@
-module Types
+module Scheme.Types
   ( LispVal (..),
   )
 where

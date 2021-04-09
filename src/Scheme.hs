@@ -1,11 +1,11 @@
-module Lib
+module Scheme
   ( readExpr,
   )
 where
 
-import Parser (parseExpr)
+import Scheme.Parser (parseExpr)
+import Scheme.Types (LispVal (..))
 import Text.ParserCombinators.Parsec (parse)
-import Types (LispVal (..))
 
 readExpr :: String -> LispVal
 readExpr input = case parse parseExpr "lisp" input of
