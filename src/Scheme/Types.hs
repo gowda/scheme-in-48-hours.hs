@@ -60,6 +60,9 @@ instance Show LispError where
   show (TypeMismatch expected found) = "Invalid type: expected " ++ expected ++ ", found " ++ show found
   show (Parser parseError) = "Parser error at " ++ show parseError
 
+instance Eq LispError where
+  (BadSpecialForm message1 form1) == (BadSpecialForm message2 form2) = message1 == message2 && form1 == form2
+
 instance Error LispError where
   noMsg = Default "An error has occured"
   strMsg = Default
