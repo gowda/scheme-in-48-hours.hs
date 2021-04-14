@@ -15,3 +15,18 @@ spec = do
 
     it "evaluates (- (+ 4 6 3) 3 5 2) to 2" $ do
       (readExpr "(- (+ 4 6 3) 3 5 2)" >>= eval) `shouldBe` Right (Number 3)
+
+    it "evaluates (< 2 3) to #t" $ do
+      (readExpr "(< 2 3)" >>= eval) `shouldBe` Right (Bool True)
+
+    it "evaluates (> 2 3) to #f" $ do
+      (readExpr "(> 2 3)" >>= eval) `shouldBe` Right (Bool False)
+
+    it "evaluates (>= 3 3) to #t" $ do
+      (readExpr "(>= 3 3)" >>= eval) `shouldBe` Right (Bool True)
+
+    it "evaluates (string=? \"test\" \"test\") to #t" $ do
+      (readExpr "(string=? \"test\" \"test\")" >>= eval) `shouldBe` Right (Bool True)
+
+    it "evaluates (string<? \"abc\" \"bba\") to #t" $ do
+      (readExpr "(string<? \"abc\" \"bba\")" >>= eval) `shouldBe` Right (Bool True)
