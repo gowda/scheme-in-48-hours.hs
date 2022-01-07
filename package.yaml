@@ -35,6 +35,8 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -Wall
+    - -fglasgow-exts
     dependencies:
     - scheme-in-forty-eight-hours
 
@@ -47,6 +49,7 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     - -Wall
+    - -fglasgow-exts
     dependencies:
     - hspec
     - scheme-in-forty-eight-hours

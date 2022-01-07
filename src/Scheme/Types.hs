@@ -1,7 +1,9 @@
+{-# LANGUAGE ExistentialQuantification #-}
 module Scheme.Types
   ( LispVal (..),
     LispError (..),
     ThrowsError (..),
+    Unpacker (..),
     trapError,
     extractValue,
   )
@@ -73,3 +75,5 @@ trapError action = catchError action (return . show)
 
 extractValue :: ThrowsError a -> a
 extractValue (Right val) = val
+
+data Unpacker = forall a. Eq a => AnyUnpacker (LispVal -> ThrowsError a)

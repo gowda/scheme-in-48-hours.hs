@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ae385186db54a9dfb9d0dc7c18150e1ea8eedadc09b87ed06d5bb38476631d96
+-- hash: c40b674537909d979cbdd0f6ac81c684d4e5bc07492abbb06c7dbfdd35f75594
 
 name:           scheme-in-forty-eight-hours
 version:        0.1.0.0
@@ -47,7 +47,7 @@ executable scheme-in-forty-eight-hours-exe
       Paths_scheme_in_forty_eight_hours
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -fglasgow-exts
   build-depends:
       base >=4.7 && <5
     , mtl
@@ -66,7 +66,7 @@ test-suite scheme-in-forty-eight-hours-test
       Paths_scheme_in_forty_eight_hours
   hs-source-dirs:
       test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -fglasgow-exts
   build-depends:
       base >=4.7 && <5
     , hspec
